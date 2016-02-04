@@ -1,0 +1,23 @@
+:scrollbar:
+:data-uri:
+
+
+== Optimize IT
+
+image::images/Slide18.png[]
+
+
+
+
+ifdef::showscript[]
+
+=== Transcript
+
+Finally, because IT often becomes a broker of public cloud services, IT must be able to account for costs and place workloads on appropriate regions in the public cloud to control costs, while also ensuring that service levels for end users are maintained.
+
+If developers are based in Singapore, then public cloud infrastructure in that location should be leveraged instead of deploying to a more expensive and more latent public cloud infrastructure in Tokyo.
+
+
+By implementing policy-based automations, Red Hat customers have seen large improvements in their resource utilization and a reduction in CapEx and OpEx per workload.
+
+endif::showscript[]

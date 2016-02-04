@@ -1,0 +1,18 @@
+:scrollbar:
+:data-uri:
+
+
+== Cloud and DevOps to the Rescue
+
+video::video/asaf_amazon.mp4[height="512",poster="image/video_poster.png"]
+
+
+
+
+ifdef::showscript[]
+
+=== Transcript
+
+The same survey shows that DevOps and cloud are helping organizations achieve higher deployment quality, faster release frequency, and improved process visibility. Even every day organizations can see vast improvements by adopting DevOps and cloud.
+
+endif::showscript[]

@@ -1,0 +1,19 @@
+:scrollbar:
+:data-uri:
+
+
+== Gartner
+
+[quote, Gartner, DevOps in the Bimodal Bridge - April 2015]
+____
+Mode 1 IT organizations should look to DevOps as a bridge to a Mode 2 orientation by continuing to assess where other patterns and practices of DevOps can enable a Mode 1 environment to deliver better service to customers.
+____
+
+
+ifdef::showscript[]
+
+=== Transcript
+
+Gartner has also recognized an approach enterprises can take to maximize the use of their existing assets. In their research “DevOps in the Bimodal Bridge,” they suggest an approach where the patterns and practices of DevOps can be applied to existing assets (mode 1) to make it more agile and efficient.
+
+endif::showscript[]

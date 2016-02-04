@@ -1,0 +1,20 @@
+:scrollbar:
+:data-uri:
+
+
+== Open Source
+
+.Driving DevOps, Cloud Applications, and Infrastructure
+
+image:images/Slide27.png[]
+
+
+
+
+ifdef::showscript[]
+
+=== Transcript
+
+We hope this overview of solution areas allows you to understand *what* Red Hat can solve for it's customers. Equally as important as the "What" is the "How". After all, customers need to understand why they should choose Red Hat to solve these problems. One major consideration is that nearly all innovation in the areas of DevOps, cloud applications, and infrastructure are being driven by open source. Major projects such as Kubernetes, Docker, Ansible that are forming the basis of DevOps tools and cloud platforms are being driven in the open source community. Organizations need, and want, to align with these projects to ensure the greatest access to innovation.
+
+endif::showscript[]

@@ -1,0 +1,18 @@
+:scrollbar:
+:data-uri:
+
+
+== Yesterday's Choices
+
+video::video/asaf_yesterday_solution.mp4[height="512",poster="image/video_poster.png"]
+
+
+
+
+ifdef::showscript[]
+
+=== Transcript
+
+Alternatively, organizations could purchase an integrated solution from a vendor. The problem with this approach, up to now, has been that vendors do not provide access to open-source innovation or wrap it in proprietary code. This results in higher costs and innovation being limited to a single vendor. It also results in much higher costs and typically requires hardware be purchased and limited to the same vendor. 
+
+endif::showscript[]

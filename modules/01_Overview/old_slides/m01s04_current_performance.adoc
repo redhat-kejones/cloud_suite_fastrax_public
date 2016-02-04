@@ -1,0 +1,18 @@
+:scrollbar:
+:data-uri:
+
+
+== Current Performance
+
+video::video/asaf_currentPerformance.mp4[height="512",poster="image/video_poster.png"]
+
+
+
+
+ifdef::showscript[]
+
+=== Transcript
+
+It is no surprise, then, according to a 2012 McKinsey and Company study, that software delivery in the enterprises surveyed was 45% over budget and 7% over on time, and provided 56% less value than expected. This performance is not adequate if business want to survive, let alone thrive, in the increasing competitive software driven world.
+
+endif::showscript[]

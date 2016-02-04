@@ -1,0 +1,24 @@
+:scrollbar:
+:data-uri:
+
+
+== Business Under Pressure
+
+video::video/asaf_businessPressure.mp4[height="512",poster="image/video_poster.png"]
+
+
+ifdef::showscript[]
+
+=== Transcript
+
+Given those three realities, what do businesses need to do?
+
+As Mark Zuckerberg once said, they need to “move fast and be stable.” Moving fast and being stable can be translated to more quickly developing new services that can be scaled to meet fast-growing demand if needed but also have an extremely low cost of failure if they do not work.
+
+In other words, cheap experiments need to be able to become global successes.
+
+The scientists conducting these cheap experiments are software developers. Lines of business naturally, and increasingly, turn to their development teams for new services.
+
+But there are obstacles. Developers cannot obtain environments quickly enough from operations because traditional processes and inflexible infrastructure and applications stand in the way. And if a developer's application is successful, the operations teams may not be able to deliver infrastructure that can scale to support the demands on the application.
+
+endif::showscript[]

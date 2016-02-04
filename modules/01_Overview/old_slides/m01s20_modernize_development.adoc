@@ -1,0 +1,23 @@
+:scrollbar:
+:data-uri:
+
+
+== Modernize Development
+
+video::video/asaf_bimodalApp3.mp4[height="512",poster="image/video_poster.png"]
+
+
+
+
+ifdef::showscript[]
+
+=== Transcript
+
+Improving Agility by Modernizing Development and Operations
+
+Cloud-native applications require a change in the way applications are designed and development and operations teams work together. Current applications are developed by siloed teams and result in a monolithic application architecture. This monolithic application architecture does not allow for independent changes to be made and makes scaling particular parts of the application difficult. Furthermore, operations teams do not have a common understanding with development teams of the requirements for deploying, updating, scaling, and managing the application when it is ready for production.
+
+
+
+
+endif::showscript[]

@@ -1,0 +1,77 @@
+QUESTIONBANKCODE|QUESTIONCODE|QUESTIONTYPE|QUESTIONTEXT|QUESTIONTEXTFORMAT|QUESTIONFEEDBACK|OPTION|RIGHTOPTION|OPTIONFEEDBACK|ISCORRECT|OPTIONWEIGHT|ISCASESENSITIVE|RANDOMIZEOPTIONS|STATUS
+RHCSFT|RHCSFT0101|1|According to a 2012 McKinsey and Company study, enterprise software delivery projects typically exceed the budget by this amount:|||30 percent|||0|0|||
+RHCSFT|RHCSFT0101|1|According to a 2012 McKinsey and Company study, enterprise software delivery projects typically exceed the budget by this amount:|||50 percent|||0|0|||
+RHCSFT|RHCSFT0101|1|According to a 2012 McKinsey and Company study, enterprise software delivery projects typically exceed the budget by this amount:|||45 percent|||1|100|||
+RHCSFT|RHCSFT0101|1|According to a 2012 McKinsey and Company study, enterprise software delivery projects typically exceed the budget by this amount:|||75 percent|||0|0|||
+RHCSFT|RHCSFT0102|5|In the demonstration, self-service catalog entries are created in Satellite.|||TRUE|||0|0|||
+RHCSFT|RHCSFT0102|5|In the demonstration, self-service catalog entries are created in Satellite.|||FALSE|||1|100|||
+RHCSFT|RHCSFT0103|1|Which provisioning method is used in the demonstration?|||Image|||1|100|||
+RHCSFT|RHCSFT0103|1|Which provisioning method is used in the demonstration?|||PXE|||0|0|||
+RHCSFT|RHCSFT0103|1|Which provisioning method is used in the demonstration?|||Template|||0|0|||
+RHCSFT|RHCSFT0103|1|Which provisioning method is used in the demonstration?|||ISO|||0|0|||
+RHCSFT|RHCSFT0104|5|By using Satellite it is possible to have a single description for a complex environment that can be deployed on multiple providers.|||TRUE|||1|100|||
+RHCSFT|RHCSFT0104|5|By using Satellite it is possible to have a single description for a complex environment that can be deployed on multiple providers.|||FALSE|||0|0|||
+RHCSFT|RHCSFT0105|1|How many tiers are in the application?|||Two|||0|0|||
+RHCSFT|RHCSFT0105|1|How many tiers are in the application?|||Three|||1|100|||
+RHCSFT|RHCSFT0105|1|How many tiers are in the application?|||Five|||0|0|||
+RHCSFT|RHCSFT0105|1|How many tiers are in the application?|||One|||0|0|||
+RHCSFT|RHCSFT0106|1|What was automatically deployed in the web tier of the demonstration?|||Perl|||0|0|||
+RHCSFT|RHCSFT0106|1|What was automatically deployed in the web tier of the demonstration?|||Ruby|||0|0|||
+RHCSFT|RHCSFT0106|1|What was automatically deployed in the web tier of the demonstration?|||Python|||0|0|||
+RHCSFT|RHCSFT0106|1|What was automatically deployed in the web tier of the demonstration?|||Apache|||1|100|||
+RHCSFT|RHCSFT0107|1|Which database was automatically deployed in the demonstration?|||IBM|||0|0|||
+RHCSFT|RHCSFT0107|1|Which database was automatically deployed in the demonstration?|||MySQL|||0|0|||
+RHCSFT|RHCSFT0107|1|Which database was automatically deployed in the demonstration?|||Postgres|||1|100|||
+RHCSFT|RHCSFT0107|1|Which database was automatically deployed in the demonstration?|||Oracle|||0|0|||
+RHCSFT|RHCSFT0108|5|Content views contain RPM packages from repos as well as puppet modules from puppet repos. Rhe RPM packages contain everything needed to correctly configure a host.|||TRUE|||1|100|||
+RHCSFT|RHCSFT0108|5|Content views contain RPM packages from repos as well as puppet modules from puppet repos. Rhe RPM packages contain everything needed to correctly configure a host.|||FALSE|||0|0|||
+RHCSFT|RHCSFT0109|1|Which configuration language is used to configure the application?|||Chef|||0|0|||
+RHCSFT|RHCSFT0109|1|Which configuration language is used to configure the application? |||Ansible|||0|0|||
+RHCSFT|RHCSFT0109|1|Which configuration language is used to configure the application?|||Puppet|||1|100|||
+RHCSFT|RHCSFT0109|1|Which configuration language is used to configure the application?|||CFEngine|||0|0|||
+RHCSFT|RHCSFT0110|5|CloudForms provisions the virtual machines during the demonstration.|||TRUE|||0|0|||
+RHCSFT|RHCSFT0110|5|CloudForms provisions the virtual machines during the demonstration.|||FALSE|||1|100|||
+RHCSFT|RHCSFT0111|1|Where are smart variables defined during the demonstration?|||Hard coded within the shell scripts|||0|0|||
+RHCSFT|RHCSFT0111|1|Where are smart variables defined during the demonstration?|||Within Red Hat Satellite|||1|100|||
+RHCSFT|RHCSFT0111|1|Where are smart variables defined during the demonstration?|||Within the CloudForms dialog when the service is ordered|||0|0|||
+RHCSFT|RHCSFT0111|1|Where are smart variables defined during the demonstration?|||After the virtual machines are deployed within Red Hat Satellite|||0|0|||
+RHCSFT|RHCSFT0112|5|Secure content for the applications is delivered via Red Hat Satellite.|||TRUE|||1|100|||
+RHCSFT|RHCSFT0112|5|Secure content for the applications is delivered via Red Hat Satellite.|||FALSE|||0|0|||
+RHCSFT|RHCSFT0113|1|What two providers are the applications deployed on?|||vSphere and Hyper-V|||0|0|||
+RHCSFT|RHCSFT0113|1|What two providers are the applications deployed on?|||Red Hat Enterprise Virtualization and Red Hat Enterprise Linux OpenStack Platform|||0|0|||
+RHCSFT|RHCSFT0113|1|What two providers are the applications deployed on?|||Amazon Web Services and Red Hat Enterprise Virtualization|||0|0|||
+RHCSFT|RHCSFT0113|1|What two providers are the applications deployed on?|||Microsoft Azure and Amazon Web Services|||1|100|||
+RHCSFT|RHCSFT0114|5|By defining the applications configuration in Red Hat Satellite it is possible to recreate the application on multiple providers with a single definition.|||TRUE|||1|100|||
+RHCSFT|RHCSFT0114|5|By defining the applications configuration in Red Hat Satellite it is possible to recreate the application on multiple providers with a single definition.|||FALSE|||0|0|||
+RHCSFT|RHCSFT0115|5|Prior to ordering the migration service from the CloudForms catalog you need to validate the infrastructure and cloud providers.|||TRUE|||1|100|||
+RHCSFT|RHCSFT0115|5|Prior to ordering the migration service from the CloudForms catalog you need to validate the infrastructure and cloud providers.|||FALSE|||0|0|||
+RHCSFT|RHCSFT0116|1|"In Red Hat Enterprise Virtualization, what is the ""Point of Arrival"" tag set to for virtual machines?"|||vSphere|||0|0|||
+RHCSFT|RHCSFT0116|1|"In Red Hat Enterprise Virtualization, what is the ""Point of Arrival"" tag set to for virtual machines?"|||RHEV|||1|100|||
+RHCSFT|RHCSFT0116|1|"In Red Hat Enterprise Virtualization, what is the ""Point of Arrival"" tag set to for virtual machines?"|||OpenStack|||0|0|||
+RHCSFT|RHCSFT0116|1|"In Red Hat Enterprise Virtualization, what is the ""Point of Arrival"" tag set to for virtual machines?"|||CloudForms|||0|0|||
+RHCSFT|RHCSFT0117|1|Which .csv file is used to set the POA and POD tags on virtual machines?|||tags.csv|||1|100|||
+RHCSFT|RHCSFT0117|1|Which .csv file is used to set the POA and POD tags on virtual machines?|||attributes.csv|||0|0|||
+RHCSFT|RHCSFT0117|1|Which .csv file is used to set the POA and POD tags on virtual machines?|||vms.csv|||0|0|||
+RHCSFT|RHCSFT0117|1|Which .csv file is used to set the POA and POD tags on virtual machines?|||poa.csv|||0|0|||
+RHCSFT|RHCSFT0118|1|What tag is used to set the platform which the VM will be migrated to? (Select the best single answer.)|||POD|||0|0|||
+RHCSFT|RHCSFT0118|1|What tag is used to set the platform which the VM will be migrated to? (Select the best single answer.)|||POA|||1|100|||
+RHCSFT|RHCSFT0118|1|What tag is used to set the platform which the VM will be migrated to? (Select the best single answer.)|||DOA|||0|0|||
+RHCSFT|RHCSFT0118|1|What tag is used to set the platform which the VM will be migrated to? (Select the best single answer.)|||PTL|||0|0|||
+RHCSFT|RHCSFT0119|1|What .csv file is used to set the migration tags on the virtual machines? (Select the best single answer.)|||tags.csv|||1|100|||
+RHCSFT|RHCSFT0119|1|What .csv file is used to set the migration tags on the virtual machines? (Select the best single answer.)|||attributes.csv|||0|0|||
+RHCSFT|RHCSFT0119|1|What .csv file is used to set the migration tags on the virtual machines? (Select the best single answer.)|||vms.csv|||0|0|||
+RHCSFT|RHCSFT0119|1|What .csv file is used to set the migration tags on the virtual machines? (Select the best single answer.)|||poa.csv|||0|0|||
+RHCSFT|RHCSFT0120|1|Which log file should be watched to see the status of the demonstration?|||status.log|||0|0|||
+RHCSFT|RHCSFT0120|1|Which log file should be watched to see the status of the demonstration?|||messages|||0|0|||
+RHCSFT|RHCSFT0120|1|Which log file should be watched to see the status of the demonstration?|||automation.log|||1|100|||
+RHCSFT|RHCSFT0120|1|Which log file should be watched to see the status of the demonstration?|||system.log|||0|0|||
+RHCSFT|RHCSFT0121|5|The service ordered in the catalog to perform migration is called adhoc_migrate. (True or False)|||True|||0|0|||
+RHCSFT|RHCSFT0121|5|The service ordered in the catalog to perform migration is called adhoc_migrate. (True or False)|||False|||1|100|||
+RHCSFT|RHCSFT0122|1|How many virtual machines are migrated during the demonstration? |||2|||0|0|||
+RHCSFT|RHCSFT0122|1|How many virtual machines are migrated during the demonstration? |||3|||0|0|||
+RHCSFT|RHCSFT0122|1|How many virtual machines are migrated during the demonstration? |||7|||0|0|||
+RHCSFT|RHCSFT0122|1|How many virtual machines are migrated during the demonstration? |||4|||1|100|||
+RHCSFT|RHCSFT0123|5|At the end of the demonstration the MySQL server is running on Red Hat Enterprise Virtualization (True or False)|||True|||1|100|||
+RHCSFT|RHCSFT0123|5|At the end of the demonstration the MySQL server is running on Red Hat Enterprise Virtualization (True or False)|||False|||0|0|||
+RHCSFT|RHCSFT0124|5|At the end of the demonstration the Wordpress servers are running on Red Hat Enterprise Virtualization (True or False)|||True|||0|0|||
+RHCSFT|RHCSFT0124|5|At the end of the demonstration the Wordpress servers are running on Red Hat Enterprise Virtualization (True or False)|||False|||1|100|||

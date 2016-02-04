@@ -1,0 +1,25 @@
+:scrollbar:
+:data-uri:
+
+
+== Deliver Scalable Infrastruture
+
+video::video/asaf_bimodalApp4.mp4[height="512",poster="image/video_poster.png"]
+
+
+
+
+ifdef::showscript[]
+
+=== Transcript
+
+
+Scalability with Programmable Infrastructure
+
+As development becomes more agile, operations processes improve, and release frequency accelerates, the demand for more scalable infrastructure for running those releases increases. Operations teams face the challenge of delivering infrastructure that can scale to meet the demand of an ever-growing number of applications. The last thing the head of operations wants to explain to management is why an extremely successful new application is hitting a wall in the number of users it can support. But that can happen if the current infrastructure is not scalable, either financially or technically.
+
+One option might be to build a scale-out infrastructure, perhaps based on OpenStack, the leading open source project for Infrastructure-as-a-Service. However, the operations team does not want to spend time taking open source code and making it consumable and sustainable for the enterprise. Nor does it have the resources to test and certify that OpenStack will work with each new piece of hardware or to maintain the code base for long periods. Finally, OpenStack may be missing key features that operations needs but does not want to develop in-house.
+
+
+
+endif::showscript[]

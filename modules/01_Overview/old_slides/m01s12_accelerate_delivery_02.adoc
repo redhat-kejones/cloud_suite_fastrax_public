@@ -1,0 +1,22 @@
+:scrollbar:
+:data-uri:
+
+
+== Accelerate Delivery
+
+video::video/asaf_bimodalApps.mp4[height="512",poster="image/video_poster.png"]
+
+
+
+
+ifdef::showscript[]
+
+=== Transcript
+
+
+One solution for this problem is to introduce into the process a service designer who can enable self-service consumption of everything developers need. You may be familiar with this process if you have work with the Information Technology Infrastructure Library, or ITIL.
+
+The designer obtains requirements from all stakeholders, including virtual infrastructure administrators, system administrators, and security operations. Then the designer builds the necessary configuration management content and couples it to a service catalog item. By invoking this catalog item, the environment can be deployed automatically across any number of providers, including virtualization and private or public cloud providers.
+
+
+endif::showscript[]

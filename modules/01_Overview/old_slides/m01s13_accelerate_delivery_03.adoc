@@ -1,0 +1,20 @@
+:scrollbar:
+:data-uri:
+
+
+== Accelerate Delivery
+
+video::video/asaf_bimodalApps.mp4[height="512",poster="image/video_poster.png"]
+
+
+
+
+ifdef::showscript[]
+
+=== Transcript
+
+
+The result is that the teams responsible for delivering an environment are now free to do more valuable work, like working with development to design operations processes that work as part of development instead of being bolted on afterward. It also removes human error from the equation.
+
+
+endif::showscript[]

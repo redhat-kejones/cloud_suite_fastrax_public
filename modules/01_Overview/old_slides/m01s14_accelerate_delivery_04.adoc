@@ -1,0 +1,21 @@
+:scrollbar:
+:data-uri:
+
+
+== Accelerate Delivery
+
+video::video/asaf_bimodalApps.mp4[height="512",poster="image/video_poster.png"]
+
+
+
+
+ifdef::showscript[]
+
+=== Transcript
+
+And most importantly, it delivers the environment in significantly less time.
+
+Many of Red Hat's customers have seen upwards of a 95 percent improvement in delivery times. This dramatic improvement in delivery time means services can be delivered faster without re-architecting of applications.
+
+
+endif::showscript[]

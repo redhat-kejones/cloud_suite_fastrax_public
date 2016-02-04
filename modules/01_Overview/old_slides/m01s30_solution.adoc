@@ -1,0 +1,25 @@
+:scrollbar:
+:data-uri:
+
+
+== The Solution
+
+video::video/asaf_yesterday_solution.mp4[height="512",poster="image/video_poster.png"]
+
+
+
+
+ifdef::showscript[]
+
+=== Transcript
+
+Red Hat Cloud Suite is the solution for organizations looking to:
+
+* Accelerate service delivery
+* Optimize IT
+* Modernize development and operations
+* And deliver scalable infrastructure
+
+Red Hat Cloud Suite does this in a way that lets organizations take advantage of the innovation taking place in open source communities, where all the innovation is occurring for cloud and DevOps, while receiving enterprise support and tested and certified integrations between all components of cloud infrastructure, applications, and DevOps tools, all while reducing the required investment.
+
+endif::showscript[]

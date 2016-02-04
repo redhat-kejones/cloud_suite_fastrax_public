@@ -1,0 +1,33 @@
+:scrollbar:
+:data-uri:
+
+
+== Optimize IT
+
+video::video/asaf_bimodalApp2.mp4[height="512",poster="image/video_poster.png"]
+
+
+
+
+ifdef::showscript[]
+
+=== Transcript
+
+
+Reducing Complexity by Optimizing IT
+
+Speeding up the delivery of development environments is a great way to make IT more relevant, but a lot of what IT spends time on is the day-to-day management of environments.
+
+If IT is spending so much time on day-to-day tasks, how can they deploy the next generation of scalable and programmable infrastructure, or have time to help development teams become more agile during the early stages of development?
+
+Many virtual infrastructure administrators spend time on several common tasks that can be largely automated through policy.
+
+First are policies about workload placement. Often one virtual infrastructure cluster is running hot while another one is completely cold. Operations teams are inundated by calls from the owners of applications running on the hot cluster, asking why response times are poor. Automating balancing with control policies can alleviate this problem and free administrators to do other things.
+
+Next is the ability to quickly move workloads between different infrastructures. This has become increasingly important as organizations adopt scale-out IaaS clouds. Operations leaders realize that if they can identify workloads that do not need to run on typically more expensive virtual infrastructure, they can save money by moving those workloads to their IaaS private cloud. This migration is typically a manual process, and it can be difficult simply determining which workloads to move. By having a systematic and automated way of identifying and migrating workloads, enterprises can move workloads quickly and reduce costs.
+
+Yet another issue is ensuring that compliance and governance requirements are met, particularly with workloads running on new infrastructures like an OpenStack-based private cloud. Not knowing which users, groups, data, applications, and packages reside on which systems running across a heterogeneous mix of infrastructure presents a large risk, and operations teams often have the responsibility and obligation of minimizing this risk. 
+
+
+
+endif::showscript[]

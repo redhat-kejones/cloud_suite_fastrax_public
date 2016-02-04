@@ -1,0 +1,51 @@
+:scrollbar:
+
+:data-uri:
+
+
+== Module Topics
+
+* The Landscape
+* Business Under Pressure
+* Current Performance
+* Cloud and DevOps Adoption
+* Bimodal IT
+* Accelerate Delivery
+* Optimize IT
+* Modernize Development
+* Deliver Stable Infrastructure
+* Open Source
+* Yesterday's Choices
+* The Solution
+* Red Hat Cloud Suite
+
+
+
+ifdef::showscript[]
+
+
+=== Transcript
+
+This presentation is designed to help you inform customers and partners about the problems Red Hat can solve with its portfolio of products. It assumes the customer or partner understands who Red Hat is and its overall cloud strategy, as covered in other training courses.
+
+This presentation is particularly aimed at the head of operations or development who may understand Red Hat's general strategy, but may not be sure exactly where to engage with Red Hat. It provides concrete examples of the problems Red Hat solves in the cloud and introduces Red Hat Cloud Suite. It ends with a suggested next step that is services-led.
+
+Here is a quick summary of what this presentation covers:
+
+* The World Is Changing:
+** Businesses need a continuous competitive advantage
+** All businesses are software companies
+** Competition is everywhere
+* IT Needs:
+** To increase relevance and reduce complexity (mode 1)
+** To create more agile processes and build programmable and scalable infrastructure and platforms (mode 2)
+* Red Hat Helps:
+** Accelerate delivery
+** Optimize for efficiency
+** Modernize development and operations
+** Deliver scalable infrastructure
+* Only Red Hat Delivers:
+** Innovation in the form of pure open source solutions
+** Integration with world class testing, support, and certification
+
+endif::showscript[]

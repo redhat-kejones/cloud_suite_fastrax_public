@@ -1,0 +1,21 @@
+:scrollbar:
+:data-uri:
+
+
+== Cloud and DevOps to the Rescue
+
+
+.Velocity at Amazon AWS
+
+video::video/asaf_cloudRescue.mp4[height="512",poster="image/video_poster.png"]
+
+
+
+
+ifdef::showscript[]
+
+=== Transcript
+
+Amazon Web Services, one of the leaders in the public cloud, uses these same principles and designs to achieve upwards of 10,000 releases per hour -- a new release every 12 seconds -- with a very low outage rate. This is an extreme example of what leveraging DevOps and cloud practices can do to the ability to release new services more quickly at a global scale.
+
+endif::showscript[]

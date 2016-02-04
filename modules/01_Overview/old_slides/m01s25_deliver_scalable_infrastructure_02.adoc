@@ -1,0 +1,20 @@
+:scrollbar:
+:data-uri:
+
+
+== Deliver Scalable Infrastructure
+
+video::video/asaf_bimodalApp4.mp4[height="512",poster="image/video_poster.png"]
+
+
+
+
+ifdef::showscript[]
+
+=== Transcript
+
+What operations really needs is a way to minimize costs and increase scale by using commodity hardware and a massively scalable distributed architecture coupled with the enterprise management features required to operate that infrastructure.  It needs a stable, tested, certified way of consuming the open source projects that make up that infrastructure. By having this, operations can deploy scale-out infrastructure in multiple locations and still aggregate management functions like chargeback, utilization, governance, and workflows into a single logical location. 
+
+
+
+endif::showscript[]

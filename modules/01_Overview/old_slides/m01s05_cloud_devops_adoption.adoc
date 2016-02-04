@@ -1,0 +1,48 @@
+:scrollbar:
+:data-uri:
+
+
+== Cloud and DevOps Adoption
+
+
+
+[width="100%",cols="3,7"]
+|===
+
+| image:images/Slide5.png[]
+
+a|.Businesses Look for an Answer
+* 93% of organizations surveyed are using or experimenting with
+Infrastructure-as-a-Service (IaaS)
+** New statistics from _The State of Cloud Report_, Forbes
+
+* 72% say they expect to use Platform-as-a-Service (PaaS)
+** PaaS expected to grow fastest over next five years
+** North Bridge Venture Partners Future of Cloud Computing survey: _SaaS Still the Dominant Cloud Platform_, Forbes
+
+* 93% expect to invest in DevOps-enabling technologies over next two years
+** _IDC DevOps Thought Leadership Survey_, IDC, May 2015
+
+* 71% are using or anticipate using containers for cloud applications
+** _Maximizing Container Benefits With a Top-Down Approach_, commissioned study conducted by Forrester Consulting on behalf of Red Hat
+
+|===
+
+ifdef::showscript[]
+
+=== Transcript
+
+This is no secret to businesses, and they are looking for new methods and designs to improve these metrics. In fact:
+
+* Over 90 percent are running or experimenting with Infrastructure as a Service.
+
+* More than 70 percent expect to use Platform as a Service in their organization.
+
+* More than 90 percent expect new investments in DevOps-enabling technologies in the next two years.
+
+* Over 70 percent are using or anticipate using containers for cloud applications.
+
+Businesses are turning to new development and operations processes, new cloud infrastructures, and application methodologies that are conducive to these new processes and infrastructures.
+
+
+endif::showscript[]

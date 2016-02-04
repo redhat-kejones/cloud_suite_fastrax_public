@@ -1,0 +1,24 @@
+:scrollbar:
+:data-uri:
+
+
+== Modernize Development
+
+video::video/asaf_bimodalApp3.mp4[height="512",poster="image/video_poster.png"]
+
+
+
+
+ifdef::showscript[]
+
+=== Transcript
+
+With operations teams freed up due to the work in our previous sections they can begin working with development teams in new cross-functional teams to create new proceses. 
+
+These new processes and cross-functional team structure, combined with platforms that support the broadest number of languages and frameworks, residing within microservices-based architectures, will enable the development and operations teams to accelerate their releases.
+
+By using microservices and standardized platforms and configurations, these new applications will allow for independent release and scaling of application components.
+
+This, in turn, results in more successful changes, faster cycle times, and the ability to scale specific services independently, making the life of both development and operations teams easier and allowing them to meet the needs of the business lines. 
+
+endif::showscript[]

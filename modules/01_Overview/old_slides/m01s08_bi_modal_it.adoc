@@ -1,0 +1,21 @@
+:scrollbar:
+:data-uri:
+
+
+== Bimodal IT
+
+video::video/asaf_bimodalDiagram.mp4[height="512",poster="image/video_poster.png"]
+
+
+
+ifdef::showscript[]
+
+=== Transcript
+
+It might seem that enterprises could simply yell “DevOps and cloud to the rescue!” and solve the problem of deploying more quickly on scalable infrastructure. But the reality is not that simple.
+
+Enterprises have existing assets and investments that are not going away anytime soon. In fact, the existing systems and processes most likely power the very core of the business and simply cannot be replaced overnight, nor would they fit the paradigm of moving quickly and experimenting.
+
+Gartner coined the term _bimodal_ to describe the approach of two modes of delivery for IT: one focused on agility and speed, and the other on stability and accuracy.
+
+endif::showscript[]

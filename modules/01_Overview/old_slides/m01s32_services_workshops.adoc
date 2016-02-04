@@ -1,0 +1,28 @@
+:scrollbar:
+:data-uri:
+
+
+== Services Workshops
+
+image::images/Slide32.png[]
+
+
+
+
+ifdef::showscript[]
+
+=== Transcript
+
+I hope this presentation was helpful in allowing you to understand the problems Red Hat Cloud Suite has allowed organizations to solve. To get you started, Red Hat Consulting offers a number of design workshops to rough out technologies, processes, and architectures while establishing a strategy for the solution across your organization's people, process, and technology.
+
+• With our IT Operational Efficiency workshop, we help you establish an infrastructure foundation that optimizes your traditional IT capabilities and prepares you with the tools and techniques needed for agile IT success. We'll work toward driving new or improved capability around areas such as workload management, CI/CD, and infrastructure as code. With a hands-on approach to mentoring and training, your team will receive the real-world skills needed to maintain and grow your environment independently.
+
+• The cloud strategy and migration workshop is intended to help customers begin building a comprehensive approach to cloud adoption and begin mapping a robust, powerful bimodal infrastructure to meet your specific requirements, working toward bringing your end-user applications to the new infrastructure as needs dictate.
+
+• Through an Accelerate DevOps workshop, we'll capture your requirements, identify use cases, and establish priorities to define actionable recommendations for DevOps implementation. The idea is to accelerate the delivery of value and capability and introduce tools and methodologies to improve your lifecycle management.
+
+These workshops are part of a larger framework intended to assist customers at different stages of their journeys in not just adopting new technology, but increasing your knowledge and self-sufficiency. 
+
+
+
+endif::showscript[]

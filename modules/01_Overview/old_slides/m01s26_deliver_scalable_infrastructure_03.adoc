@@ -1,0 +1,19 @@
+:scrollbar:
+:data-uri:
+
+
+== Deliver Scalable Infrastructure
+
+video::video/asaf_bimodalApp4.mp4[height="512",poster="image/video_poster.png"]
+
+
+
+
+ifdef::showscript[]
+
+=== Transcript
+
+Many of Red Hat customers have found this solution beneficial in reducing costs and ensuring stability at scale including a large North American health care provider and a large European bank. Both were able to leverage Red Hat's solution for scalable infrastructure to create a public-cloud like infrastructure for internal users.
+
+
+endif::showscript[]

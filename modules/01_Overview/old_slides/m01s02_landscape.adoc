@@ -1,0 +1,35 @@
+:scrollbar:
+:data-uri:
+
+
+== The Landscape
+
+video::video/asaf_landscape.mp4[height="512",poster="image/video_poster.png"]
+
+
+
+
+ifdef::showscript[]
+
+=== Transcript
+
+The business environment has never been more competitive and disruptive than it is today. Businesses need to come to terms with three realities:
+
+* *They need a continuous competitive advantage*.
++
+Just ask Kodak, who has seen the camera business transform from a standalone device to a feature on every mobile phone, with new players like Snapfish, Shutterfly, and Chatbooks creating new ways of engaging with markets.
+
++
+If you don’t have a way of continually developing new competitive advantages, you will not be relevant for long.
+
+* *All businesses are software companies*.
++
+Bank of America is not just a bank, it is a transaction processor. Exxon Mobil is not only an oil and gas company, it is a global information systems company. With each passing day, Walgreens' business is more reliant on electronic health records.
+
+* *Competition is everywhere*.
++
+Ten years ago, if you were asked who the biggest competitive threats to Fedex were, names like UPS and DHL would have come to mind. Today, Fedex, UPS, and DHL are increasingly faced with threats from Uber, Walmart, Amazon, and others who may enter their logistics market with new ways of reaching customers.
+
+
+
+endif::showscript[]

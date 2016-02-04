@@ -1,0 +1,25 @@
+:scrollbar:
+:data-uri:
+
+
+== Red Hat Cloud Suite
+
+image::images/Slide31.png[]
+
+
+
+
+ifdef::showscript[]
+
+=== Transcript
+
+Red Hat Cloud Suite provides access to foundational technologies, built from open source, with a supported lifecycle and clear points of integration. This includes:
+
+* Red Hat Enterprise Virtualization - A complete virtualization solution.
+* Red Hat Enterprise Linux OpenStack Platform - A production ready cloud foundation for Infrastructure-as-a-Service. 
+* Red Hat CloudForms - Hybrid cloud management.
+* Red Hat Satellite - A lifecycle management solution for Red Hat Enterprise Linux.
+* Red Hat Enterprise Linux - Red Hat's enterprise leading Operating System available as a guest running on both RHEV and RHEL OSP.
+
+
+endif::showscript[]

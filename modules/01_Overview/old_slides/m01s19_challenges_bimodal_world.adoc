@@ -1,0 +1,19 @@
+:scrollbar:
+:data-uri:
+
+
+== Challenges in a Bimodal World
+
+video::video/asaf_bimodalApp3.mp4[height="512",poster="image/video_poster.png"]
+
+
+
+ifdef::showscript[]
+
+=== Transcript
+
+Now we look at the next problem area -- existing processes and applications not being agile enough for the reality of mode 2.
+
+
+
+endif::showscript[]

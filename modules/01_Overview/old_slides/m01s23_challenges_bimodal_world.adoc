@@ -1,0 +1,18 @@
+:scrollbar:
+:data-uri:
+
+
+== Challenges in a Bimodal World
+
+video::video/asaf_bimodalApp4.mp4[height="512",poster="image/video_poster.png"]
+
+
+ifdef::showscript[]
+
+=== Transcript
+
+Now we examine our final scenario -- the current mode 1 infrastructure not being scalable enough for mode 2.
+
+
+
+endif::showscript[]

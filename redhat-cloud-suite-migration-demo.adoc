@@ -1,0 +1,350 @@
+:scrollbar:
+:data-uri:
+:toc2:
+
+== Red Hat Cloud Suite Virtualization Migration Demo
+
+:numbered:
+
+== Overview
+
+This demonstration uses Red Hat CloudForms 3.2 as a broker to drive virtual-to-virtual tools such as `ovftool` and `virt-v2v` to migrate VMs from VMware vSphere to Red Hat Enterprise Virtualization and from Red Hat Enterprise Virtualization to Red Hat Enterprise Linux OpenStack Platform 7.
+
+.Goal
+* Migrate the VMs created in the Red Hat Cloud Suite Deployment demo
+
+.Prerequisites
+
+* Completion of the Red Hat Cloud Suite Deployment demo
+* The following provisioned VMs:
+** `wp1` - a Red Hat Enterprise Linux 7 host running Apache and WordPress
+** `wp2` - a Red Hat Enterprise Linux 7 host running Apache and WordPress
+** `haproxy` - a Red Hat Enterprise Linux 7 host running the HAProxy tool configured to proxy traffic to `wp1` and `wp2`
+** `mysql`- a Red Hat Enterprise Linux 7 host running MariaDB that the `wp1` and `wp2` hosts talk to
+
+=== Environment
+
+The demo environment consists of the following systems:
+
+[cols=a1,a1,a2]
+|=======
+|Hostname |Internal IP |Description
+|`demo.cloudlab.redhat.com` |`172.16.0.10` | Jump host and iSCSI/NFS server
+|`ipa.cloudlab.redhat.com` |`172.16.0.15` | IPA server managed by Satellite, serves `rhcs.cloudlab.redhat.com` sub-domain
+|`cf.cloudlab.redhat.com` |`172.16.0.20` | CloudForms server
+|`satellite.cloudlab.redhat.com` |`172.16.0.25` | Red Hat Satellite 6.1 server
+|`rhevm.cloudlab.redhat.com` |`172.16.0.50` | Red Hat Enterprise Virtualization Manager server
+|`kvm.cloudlab.redhat.com` |`172.16.0.55` | KVM hypervisor managed by Red Hat Enterprise Virtualization
+|`esx00.cloudlab.redhat.com` |`172.16.0.30` | ESXi hypervisor
+|`vcenter.cloudlab.redhat.com` |`172.16.0.40` | VMware vCenter server
+|`osp.cloudlab.redhat.com` | `172.16.0.60` | Red Hat OpenStack Platform server
+|`migration.cloudlab.redhat.com` | `172.16.0.11` | Virtual-to-Virtual Migration server
+|=======
+
+
+=== Provision Your Demo Environment
+
+
+. Log in to https://rhpds.redhat.com with your OPENTLC SSO credentials.
+
+. Go to *Services* -> *Catalogs* -> *Service Catalogs*.
+
+. Under *All Services* -> *Cloud Infrastructure Demos*, select *Red Hat Cloud Suite Migration Demo*.
+
+. On the right, click *Order*.
+
+. Read all of the information on the resulting page, check the necessary box, and then click *Submit*.
+
+[IMPORTANT]
+====
+* It takes about 20 minutes for your demo to load completely and become accessible, even if some of the systems are marked "Up."
+* You will receive an email with information about how to access your demo environment.
+** The email contains a list of hostnames, IP addresses, and your GUID; make note of them.
+** Whenever you see GUID in the demo instructions, replace it with the GUID provided in the email.
+* You can get real-time updates of your demo environment at https://www.opentlc.com/rhpds-status.
+====
+
+[TIP]
+Be very mindful of the runtime of your demo environment!  It may take you several hours to complete the demo, so you may have to extend the runtime.  This is especially important in later steps, when you are building the VMs.  For information on how to extend runtime and lifetime, see https://www.opentlc.com/lifecycle.
+
+== Getting Started
+
+. Once the system is running, use SSH to access your demo server using your OPENTLC login name and private SSH key.
+
+* Example using a Unix/Linux system:
++
+----
+$ ssh -i /path/to/private_key <YOUR-OPENTLC-USERNAME>@demo-<YOUR-GUID>.rhpds.opentlc.com
+----
+
+. Become `root` using your OPENTLC password:
++
+----
+$ sudo -i
+----
+
+. Establish an SSH connection to the CloudForms server and monitor `automation.log`:
++
+----
+# ssh cf
+# tail -f /var/www/miq/vmdb/log/automation.log
+----
++
+[TIP]
+The log entries are very long, so it helps if you stretch this screen as wide as possible.
+
+. From a web browser, open each of the URLs below in a separate window or tab using these credentials (except when noted):
+
+* *Username*: `admin`
+* *Password*: `r3dh4t1!`
++
+[NOTE]
+You must accept all of the self-signed SSL certificates.
++
+[TIP]
+You can also find these URLs in the email provided when you provisioned the demo environment.
+
+* *Red Hat Enterprise Virtualization Manager:* https://rhevm-GUID.rhpds.opentlc.com
+.. Navigate to and click *Administration Portal*.
+
+* *vCenter:* https://vcenter-GUID.rhpds.opentlc.com
+
+.. Use the username `root` to log in to vCenter.
+
+.. Click *Log in to vSphere Web Client*.
+
+** Flash Player is required.
+
+.. Click *VMs and Templates*.
+
+* *CloudForms:* https://cf-GUID.rhpds.opentlc.com
+
+* *OpenStack Dashboard:* https://osp-GUID.rhpds.opentlc.com/dashboard
+
+=== Validate the Current VMs
+
+. On the `cf` system, go to *Infrastructure* -> *Providers*.
+
+. If you see an exclamation mark (*!*) in a provider, check the provider's box, go to *Configuration* -> *Edit Selected Infrastructure Provider*, and click *Validate*.
+
+. Repeat the previous step for each provider.
+
+. Go to *Infrastructure* -> *Providers* -> *Virtual Machines* -> *VMs* -> *All VMs*.
+
+. Make sure all four VMs show up as entities in CloudForms.
++
+[NOTE]
+If you needed to validate providers, you may have to wait a few minutes and refresh the screen before the VMs show up.
+
+. Tell CloudForms to shut down (_not_ power off) all four VMs.
+
+== Migrate a VM from VMware to Red Hat Enterprise Virtualization
+
+
+=== Configure Red Hat Enterprise Virtualization as a Migration Destination
+
+. On the `cf` system, go to *Infrastructure* -> *Providers*.
+
+. Click *RHEV*.
+
+. Select *Policy* -> *Edit Tags*.
+
+. Select *Point of Arrival* and then select *Rhev* for the assigned value.
++
+* This sets this provider as an available Red Hat Enterprise Virtualization destination.
+
+. Select the *provider_type* tag and select *POA* for the assigned value, then click *Save*.
++
+* This sets this provider as the current point of arrival.
+
+=== Configure VMware as a Migration Source
+
+. Navigate to the *VMware* provider.
+
+. Select *Policy* -> *Edit Tags*.
+
+. Select *provider_type* and select *POD* for the assigned value, then click *Save*.
++
+* This sets this provider as the point of departure or source provider.
+
+=== Set VM Migration Attributes
+
+. On the `cf` system, go to *Services* -> *Catalogs* -> *Service Catalogs*.
+
+. Under *All Services* -> *Import CSV*, select *Import Attributes*.
+
+. On the right, click *Order*.
+
+. On the resulting screen, type `attributes.csv` in the *Filename* field and click *Submit*.
+
+. Monitor `automation.log` on the `cf` server.  When the process is complete, continue with the next section.
++
+[NOTE]
+If you see any errors about `wp2-rhcs-cloudlab-redhat-com`, you can ignore them for now because you are not exporting from Red Hat Enterprise Virtualization yet.
+
+=== Set VM Migration Tags
+
+. On the `cf` system, go to *Services* -> *Catalogs* -> *Service Catalogs*.
+
+. Under *All Services* -> *Import CSV*, select *Import Tags*.
+
+. On the right, click *Order*.
+
+. On the resulting screen, type `tags.csv` in the *Filename* field and click *Submit*.
+
+. Monitor `automation.log` on the `cf` server.  When the process is complete, continue with the next section.
++
+[NOTE]
+Continue to ignore errors about `wp2-rhcs-cloudlab-redhat-com`.
+
+=== Check Tags and Attributes
+
+. Go to *Infrastructure* -> *Providers* -> *Virtual Machines* -> *VMs* -> *All VMs*.
+
+. Navigate to the `wp1` VM.
+
+. Under *Custom Attributes*, confirm that there is a custom attribute called `ip` with the value you provided in `attributes.csv`.
+
+. Under *Smart Management*, confirm that *migrate_group* is set to *demo2* and *Point of Arrival* is set to *Rhev*.
+
+=== Start VM Migration
+
+. On the `cf` system, go to *Services* -> *Catalogs* -> *Service Catalogs*.
+
+. Under *All Services* -> *Migration*, select *Batch_Migrate*.
+
+. On the right, click *Order*.
+
+. For *Migration Group*, select *demo1* and click *Submit*.
+
+. Monitor `automation.log` and the Red Hat Enterprise Virtualization Admin GUI closely.
++
+[NOTE]
+It may be beneficial to open three separate sessions to the Migration server and run the following:
++
+----
+# watch find /mnt
+----
++
+----
+# tail -f /mnt/migrate/ova/mysql.rhcs.cloudlab.redhat.com/*log
+----
++
+----
+# tail -f /mnt/migrate/ova/mysql.rhcs.cloudlab.redhat.com/*err
+----
+
+NOTE: It takes about 20 minutes for `automation.log` to show that the service has completed.
+
+=== Verify VM Migration
+
+. Log in to the Red Hat Enterprise Virtualization Admin GUI and open the console for the `mysql` VM that was migrated.
+
+. Log in as `root` with the password `r3dh4t1!`.
+
+. Make sure the VM retained the IP from the `attributes.csv` and that it can resolve an external hostname.
+
+
+== Migrate a VM From VMware to OpenStack Platform
+
+. Configure OpenStack Platform as a migration destination.
+
+.. On the `cf` system, go to *Clouds* -> *Providers*.
+
+.. Select *OSP*.
+
+.. Select *Policy* -> *Edit Tags*.
+
+.. Select *Point of Arrival* and select *OpenStack* for the assigned value.
++
+* This sets this provider as an available *OpenStack* destination.
+
+.. Select *provider_type* and select *POA* for the assigned value, then click *Save*.
++
+* This sets this provider as the current point of arrival.
+
+. Clear the POA tag from Red Hat Enterprise Virtualization.
+
+.. On the `cf` system, go to *Infrastructure* -> *Providers*.
+
+.. Select *RHEV*.
+
+.. Select *Policy* -> *Edit Tags*.
+
+.. Click the *Trash Can* icon next to the Point of Arrival tag.
+
+.. Click the *Trash Can* icon next to the provider_type tag.
+
+.. Click *Save*.
+
+. Set the VM tags and attributes.
+
+.. Using the procedure learned before, monitor `automation.log` while running the *Import Tags* and *Import Attributes* catalog items again.
++
+[NOTE]
+You can ignore the warnings from the VMs with disabled providers.
+
+. Migrate the VM.
+
+.. On the `cf` system, go to *Services* -> *Catalogs* -> *Service Catalogs*.
+
+.. Under *All Services* -> *Migration*, select *Batch_Migrate*.
+
+.. On the right, click *Order*.
+
+.. For *Migration Group*, select *demo2* then click *Submit*.
+
+. Monitor `automation.log` and the OpenStack Platform dashboard closely.
+
+
+== Migrate a VM From Red Hat Enterprise Virtualization to OpenStack Platform
+
+. Clear the POA tag from VMware.
+
+.. On the `cf` system, go to *Infrastructure* -> *Providers*.
+
+.. Select *VMware*.
+
+.. Select *Policy* -> *Edit Tags*.
+
+.. Click the *Trash Can* icon next to the Point of Arrival tag.
+
+.. Click the *Trash Can* icon next to the provider_type tag.
+
+.. Click *Save*.
+
+. Configure Red Hat Enterprise Virtualization to be a POD.
+
+.. Navigate to the *RHEV* provider.
+
+.. Click *Policy* -> *Edit Tags*.
+
+.. Select the *provider_type* tag, select *POD* for the assigned value, and then click *Save*.
+
+. Set the VM tags and attributes.
+
+.. Using the procedure learned before, monitor `automation.log` while running the *Import Tags* and *Import Attributes* catalog items again.
++
+[NOTE]
+You can ignore the warnings from the VMs with disabled providers.
+
+. Migrate the VM.
+
+.. On the `cf` system, go to *Services* -> *Catalogs* -> *Service Catalogs*.
+
+.. Under *All Services* -> *Migration*, select *Batch_Migrate*.
+
+.. On the right, click *Order*.
+
+.. For *Migration Group*, select *demo3* then click *Submit*.
+
+. Monitor `automation.log` and the OpenStack Platform dashboard closely.
+
+== End State
+
+* You now have the `mysql` server on Red Hat Enterprise Virtualization and the two `wp` servers on OpenStack Platform.  
+* The `haproxy` system remains on Red Hat Enterprise Virtualization.
+
+== Extra Credit
+
+* Use what you learned in this lab to migrate `haproxy` to OpenStack Platform.

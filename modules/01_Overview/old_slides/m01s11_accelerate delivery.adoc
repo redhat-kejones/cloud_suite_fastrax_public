@@ -1,0 +1,26 @@
+:scrollbar:
+:data-uri:
+
+
+== Accelerate Delivery
+
+video::video/asaf_bimodalApps.mp4[height="512",poster="image/video_poster.png"]
+
+
+
+
+ifdef::showscript[]
+
+=== Transcript
+
+
+Increasing Relevance by Accelerating Service Delivery
+
+Depending on the size of the organization and the maturity of the IT department, delivering development and test environments in many enterprises generally starts with either a request to a service management system or a tap on a system administrator's shoulder. Either way, once requests move into the pipeline, many teams may need to perform tasks to deliver the environments. These might include virtual infrastructure administrators, systems administrators, and security operations. In larger organizations you may also see disaster-recovery teams, networking teams, and others involved in this process. Again, depending on how mature the organization is, how all of this is coordinated can range from taps on many shoulders to passing tickets around in a service management system.
+
+At best, each team takes minutes or hours to respond and perform some tasks, and often the person who requests the service must answer follow-up questions, such as “Are you sure you need 16GB of RAM?” and “What version of Java do you need for this?”
+
+The result is a lot of highly skilled people spending a lot of time to deliver the environment very slowly to the developer. Multiply this by the number of developers in an organization and the number of requests for environments, and you can see why traditional IT processes and systems are struggling to maintain relevance.
+
+
+endif::showscript[]

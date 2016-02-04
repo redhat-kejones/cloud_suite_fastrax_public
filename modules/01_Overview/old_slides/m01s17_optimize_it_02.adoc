@@ -1,0 +1,18 @@
+:scrollbar:
+:data-uri:
+
+
+== Optimize IT
+
+video::video/asaf_bimodalApp2.mp4[height="512",poster="image/video_poster.png"]
+
+
+
+
+ifdef::showscript[]
+
+=== Transcript
+
+By being able to introspect workloads across platforms, operations teams can gain insight into exactly which users, data, and packages are running on their systems, and leverage the previously mentioned migration capabilities to make sure those systems are running on appropriate providers.
+
+endif::showscript[]

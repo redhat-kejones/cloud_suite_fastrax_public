@@ -1,0 +1,17 @@
+:scrollbar:
+:data-uri:
+
+
+== Challenges in a Bimodal World
+
+video::video/asaf_bimodalApp2.mp4[height="512",poster="image/video_poster.png"]
+
+
+
+ifdef::showscript[]
+
+=== Transcript
+
+We just explored how Red Hat can help users Accelerate Service Deliver, now we look at the next scenario -- Optimizing IT.
+
+endif::showscript[]

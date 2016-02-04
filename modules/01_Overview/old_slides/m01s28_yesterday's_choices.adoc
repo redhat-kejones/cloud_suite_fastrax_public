@@ -1,0 +1,18 @@
+:scrollbar:
+:data-uri:
+
+
+== Yesterday's Choices
+
+video::video/asaf_yesterday_solution.mp4[height="512",poster="image/video_poster.png"]
+
+
+
+
+ifdef::showscript[]
+
+=== Transcript
+
+Until now, organizations had to choose either integration or innovation; they could not have both. Organizations want to leverage the innovation taking place in the open source communities, but this requires them to understand and integrate all of the open source technologies on their own. If they take on the challenge of using open source projects directly, they have to provide their own support, which is not their core business.
+
+endif::showscript[]

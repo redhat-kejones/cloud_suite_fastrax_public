@@ -1,0 +1,25 @@
+:scrollbar:
+:data-uri:
+
+
+== Challenges in a Bimodal World
+
+video::video/asaf_bimodalApps.mp4[height="512",poster="image/video_poster.png"]
+
+
+
+ifdef::showscript[]
+
+=== Transcript
+
+Red Hat has observed this trend and believes most organizations are trying to address four key problems in the emerging bimodal world.
+
+In mode 1 they are trying to increase relevance and reduce complexity. To increase relevance, they need to deliver developer environments in minutes rather than days or weeks. To reduce complexity, they need to implement policy-driven automation to reduce the need for manual tasks.
+
+In mode 2 they are trying to improve agility and increase scalability. To improve agility, they need to create more flexible development and operations processes and embrace new application architectures that allow for faster rates of change by reducing dependencies. To increase scalability, they need to implement infrastructure with an asynchronous design that is entirely API-driven, which changes the admin-to-host ratio from a linear model to an exponential one.
+
+Let us look at each of these examples in more detail.
+
+
+
+endif::showscript[]

@@ -1,0 +1,4 @@
+
+== Red Hat Cloud Suite FASTRAX
+
+video::video/CloudSuiteFASTRAX.mp4[height="512",poster="image/video_poster.png”]

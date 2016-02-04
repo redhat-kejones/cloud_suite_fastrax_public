@@ -1,0 +1,200 @@
+:scrollbar:
+:data-uri:
+:toc2:
+
+== Red Hat Cloud Suite Deployment Demo
+
+:numbered:
+
+== Overview
+
+In this Red Hat Cloud Suite demonstration, Red Hat CloudForms 3.2 acts as a broker to drive Red Hat Satellite 6.1 to build an application stack consisting of two web servers running Wordpress that talk to a database server running MariaDB. The two web servers are behind an HAProxy. Wordpress, MariaDB, and HAProxy are all configured by Satellite's Puppet implementation with the use of custom Puppet modules. All servers are built from scratch using PXE and Satellite's built-in kickstart functionality. The MariaDB server and one of the web servers are built on Red Hat Enterprise Virtualization, while HAProxy and the other web server are built on VMware vCenter. The environment is preconfigured with CloudForms 3.2 and Satellite 6.1 as well as an IPA server to serve DNS. The IPA server's DNS entries are managed automatically by Satellite 6.1.
+
+=== System Requirements
+
+* Firefox 17 or higher
++
+[NOTE]
+Chrome and Internet Explorer are not recommended.
+
+* Adobe Flash 15 or higher must be enabled in Firefox (for vCenter)
+* SSH client
+* SSH key pair
+
+=== Provision Your Demo Environment
+
+. Upload your public SSH key to https://www.opentlc.com/update, if you have not done so already.
++
+[NOTE]
+If you need help with SSH, go to https://www.opentlc.com/ssh.html.
+
+. Log in to https://rhpds.redhat.com with your OPENTLC SSO credentials.
+
+. Go to *Services* -> *Catalogs* -> *Service Catalogs*.
+
+. Under *All Services* -> *Cloud Infrastructure Demos*, select *Red Hat Cloud Suite Deployment Demo*.
+
+. On the right, click *Order*.
+
+. Read all of the information on the resulting page, check the necessary box, and click *Submit*.
+
+[IMPORTANT]
+====
+* It takes about 20 minutes for your demo to load completely and become accessible, even if some of the systems are marked "Up."
+* You will receive an email with information about how to access your demo environment.
+** The email contains a list of hostnames, IP addresses, and your GUID; make note of them.
+** Whenever you see GUID in the demo instructions, replace it with the GUID provided in the email.
+* You can get real-time updates of your demo environment at https://www.opentlc.com/rhpds-status.
+====
+
+[TIP]
+Be very mindful of the runtime of your demo environment!  It may take you several hours to complete the demo, so you may have to extend the runtime.  This is especially important in later steps when you are building virtual machines.  For information on how to extend runtime and lifetime, see https://www.opentlc.com/lifecycle.
+
+=== Environment
+
+The demo environment consists of the following systems:
+
+[cols=a1,a1,a2]
+|=======
+|Hostname |Internal IP |Description
+|`demo.cloudlab.redhat.com` |`172.16.0.10` | Jump host and iSCSI/NFS server
+|`ipa.cloudlab.redhat.com` |`172.16.0.15` | IPA server managed by Satellite, serves `rhcs.cloudlab.redhat.com` sub-domain
+|`cf.cloudlab.redhat.com` |`172.16.0.20` | CloudForms server
+|`satellite.cloudlab.redhat.com` |`172.16.0.25` | Red Hat Satellite 6.1 server
+|`rhevm.cloudlab.redhat.com` |`172.16.0.50` | Red Hat Enterprise Virtualization Manager server
+|`kvm.cloudlab.redhat.com` |`172.16.0.55` | KVM hypervisor managed by Red Hat Enterprise Virtualization
+|`esx00.cloudlab.redhat.com` |`172.16.0.30` | ESXi hypervisor
+|`vcenter.cloudlab.redhat.com` |`172.16.0.40` | VMware vCenter server
+|=======
+
+== Getting Started
+
+. Once the system is running, use SSH to access your demo server with your OPENTLC login name and private SSH key.
+
+* Example using a Unix/Linux system:
++
+----
+$ ssh -i /path/to/private_key <YOUR-OPENTLC-USERNAME>@demo-<YOUR-GUID>.rhpds.opentlc.com
+----
+
+. Become `root` using your OPENTLC password:
++
+----
+$ sudo -i
+----
+
+. Establish an SSH connection to the CloudForms server and monitor `automation.log`:
++
+----
+# ssh cf
+# tail -f /var/www/miq/vmdb/log/automation.log
+----
++
+[TIP]
+The log entries are very long, so it helps if you stretch this screen as wide as possible.
+
+. Log in to the demo server, become `root`, and use SSH to access the Satellite server:
++
+----
+$ ssh -i /path/to/private_key opentlcuser@demo-GUID.rhpds.opentlc.com
+$ sudo -i
+# ssh satellite
+----
+
+. Monitor the Foreman `production.log` on the Satellite server:
++
+----
+# tail -f /var/log/foreman/production.log
+----
+
+. From a web browser, open each of the URLs below in separate windows or tabs using these credentials (except when noted):
+
+* *Username*: `admin`
+* *Password*: `r3dh4t1!`
++
+[NOTE]
+You must accept all of the self-signed SSL certificates.
++
+[TIP]
+You can also find these URLs in the email provided when you provisioned the demo environment.
+
+* *Red Hat Enterprise Virtualization Manager:* https://rhevm-GUID.rhpds.opentlc.com
+.. Navigate to and click *Administration Portal*.
+.. Set the profile to *internal*. 
+
+* *vCenter:* https://vcenter-GUID.rhpds.opentlc.com
+
+.. Use the username `root` to log in to vCenter.
+
+.. Click *Log in to vSphere Web Client*.
+
+** Flash Player is required.
+
+* *CloudForms:* https://cf-GUID.rhpds.opentlc.com
+
+* *Satellite:* https://satellite-GUID.rhpds.opentlc.com
+
+. On the `rhevm` system, go to the *Storage* tab and make sure everything is up and green.
++
+[NOTE]
+If the status is not good, wait a few minutes for the storage domain to recover.  If it does not recover after 20 minutes, you will need to troubleshoot the environment or delete it and build a new one.  Troubleshooting is out of scope for this demo.
+
+. Select the *Virtual Machines* tab.
+. On the `vcenter` system, click *VMs and Templates*.
+
+. On the `satellite` system, go to *Hosts* -> *All Hosts*.
++
+[NOTE]
+It is not a problem if the satellite host has a red `E` on its status; it will eventually change to a green `O`.
+
+== Run the Demo
+
+. On the `cf` system, go to *Services* -> *Catalogs* -> *Service Catalogs*.
+
+. Under *All Services* -> *Satellite Based*, select *Satellite-Multitier-Demo*.
+
+. On the right, click *Order*.
+
+. Review each tab on the resulting screen to determine the settings for each VM to be created.
+
+* Observe the providers and change them if you want.
+* You can also adjust the CPU, memory, and disk size for each host.
++
+[WARNING]
+You may experience delays if you try to run too many VMs on one provider or try to provide too many resources.  The hypervisors provided do not have a lot of capacity. Try to use the defaults at least the first time you run the demo.  Even with the four systems deployed using the defaults, sometimes Foreman does not respond quickly enough. There appears to be a bug in Foreman, which has been submitted for review and resolution.  Please pay close attention to `automation.log` on the CloudForms server and `production.log` on the Satellite server.
+
+. Click *Submit*.
+
+. Monitor the two log files you set up in earlier steps.
+* Depending on your audience, you may not want to show the log file output, but it is useful if something goes wrong.
+
+. Monitor the `rhevm` and `vcenter` web UIs, to see when the new VMs appear.
+. Monitor the `satellite` web UI under *Hosts* -> *All Hosts*.
++
+[NOTE]
+For `rhevm` and `vcenter` you may have to use the refresh button in the web UI (_not_ the browser's refresh) to see the new VMs as they are provisioned.  It can take a few minutes for the VMs to appear.
+
+. After the new VMs appear in `rhevm` and `vcenter`, open their consoles and monitor them.
++
+[NOTE]
+This build may take up to 30 minutes.  This environment runs entirely in the cloud so it does not reflect bare metal hypervisor performance.
+
+== End State
+
+. When the build is complete, verify that you have the following four VMs:
+
+* `wp1` - a Red Hat Enterprise Linux 7 host running Apache and WordPress
+* `wp2` - a Red Hat Enterprise Linux 7 host running Apache and WordPress
+* `haproxy` - a Red Hat Enterprise Linux 7 host running the HAProxy tool configured to proxy traffic to `wp1` and `wp2`
+* `mysql`- a Red Hat Enterprise Linux 7 host running MariaDB that the `wp1` and `wp2` hosts talk to
+
+. Wait for the installation to complete and the login prompt to appear on all four system consoles.
+
+. To test the environment, go to http://demo-GUID.rhpds.opentlc.com.
+* You see the WordPress setup screen when the system is ready.
++
+[NOTE]
+If you see the *Service Temporarily Unavailable* message, try again in one or two minutes.  It takes Puppet time to configure everything.  You can look at the log on the demo server at `/var/www/html/httpd/error_log`.  It temporarily disables the proxy if HAProxy is not answering.
++
+[NOTE]
+The demo server has a reverse proxy that points to HAProxy, which in turn points to the WordPress hosts.  If you bring down one of the WordPress hosts, the HAProxy fails over to the remaining host.
